@@ -16,8 +16,8 @@ jobs:
       # AWS 認証
       - uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-region: "us-east-1"
-          role-to-assume: "arn:aws:iam::230806776430:user/GitHubActions-WebSpeedHackathon2023"
+          aws-region: 'us-east-1'
+          role-to-assume: 'arn:aws:iam::230806776430:role/webspeedhackathon2023-push-ecr-from-github-actions-role'
 
       # ECR ログイン
       - uses: aws-actions/amazon-ecr-login@v1
@@ -29,7 +29,7 @@ jobs:
           # ECR レジストリを `aws-actions/amazon-ecr-login` アクションの `outputs.registry` から取得
           REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           # イメージを push する ECR リポジトリ名
-          REPOSITORY: "webspeedhackathon2023"
+          REPOSITORY: 'webspeedhackathon2023'
           # 任意のイメージタグ
           # 今回は Git のコミットハッシュにしておく
           IMAGE_TAG: ${{ github.sha }}
