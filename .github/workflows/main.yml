@@ -31,8 +31,7 @@ jobs:
           # イメージを push する ECR リポジトリ名
           REPOSITORY: 'webspeedhackathon2023'
           # 任意のイメージタグ
-          # 今回は Git のコミットハッシュにしておく
-          IMAGE_TAG: latest
+          IMAGE_TAG: 'latest'
         run: |
           docker build . --tag ${{ env.REGISTRY }}/${{ env.REPOSITORY }}:${{ env.IMAGE_TAG }}
           docker push ${{ env.REGISTRY }}/${{ env.REPOSITORY }}:${{ env.IMAGE_TAG }}
