@@ -55,7 +55,7 @@ jobs:
         with:
           push: false
           load: true # イメージを保存する
-          tags: ${{ env.REPOSITORY }}:${{ env.IMAGE_TAG }}
+          tags: ${{ env.REGISTRY }}/${{ env.REPOSITORY }}:${{ env.IMAGE_TAG }}
           cache-from: type=local,src=${{ env.PATH_CACHE }}
           cache-to: type=local,dest=${{ env.PATH_CACHE }}-new,mode=max
 
