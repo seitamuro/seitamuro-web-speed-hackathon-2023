@@ -6,6 +6,10 @@ on:
 env:
   # Dockerイメージのtarアーカイブ出力先のパス
   PATH_CACHE: /tmp/docker-img-arch
+  # イメージを push する ECR リポジトリ名
+  REPOSITORY: webspeedhackathon2023
+  # 任意のイメージタグ
+  IMAGE_TAG: 'latest'
 
 jobs:
   push:
@@ -51,19 +55,15 @@ jobs:
         with:
           push: false
           load: true # イメージを保存する
-          tags: latest
+          tags: ${{ env.REPOSITORY }}:${{ env.IMAGE_TAG }}
           cache-from: type=local,src=${{ env.PATH_CACHE }}
           cache-to: type=local,dest=${{ env.PATH_CACHE }}-new,mode=max
 
       # Docker イメージを pushする
-      - name: build and push docker image to ecr
+      - name: Push docker image to ecr
         env:
           # ECR レジストリを `aws-actions/amazon-ecr-login` アクションの `outputs.registry` から取得
           REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          # イメージを push する ECR リポジトリ名
-          REPOSITORY: 'webspeedhackathon2023'
-          # 任意のイメージタグ
-          IMAGE_TAG: 'latest'
         run: docker push ${{ env.REGISTRY }}/${{ env.REPOSITORY }}:${{ env.IMAGE_TAG }}
 
       # キャッシュが蓄積される問題を解消
