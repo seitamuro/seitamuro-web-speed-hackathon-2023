@@ -1,0 +1,24 @@
+vite v4.1.4 building for production...
+✓ 2724 modules transformed.
+Initially, there are
+13 chunks, of which
+8 are below minChunkSize.
+After merging chunks, there are
+13 chunks, of which
+8 are below minChunkSize.
+dist/index.html                                 0.72 kB
+dist/assets/canvaskit-2a9e3015.wasm         6,836.23 kB
+dist/assets/load_fonts-040eec51.js              0.71 kB │ gzip:     0.32 kB
+dist/assets/PrimaryAnchor-373a7773.js           1.20 kB │ gzip:     0.57 kB
+dist/assets/useUpdateCartItems-12665a6a.js      1.55 kB │ gzip:     0.75 kB
+dist/assets/index-33e8cf66.js                   3.03 kB │ gzip:     0.87 kB
+dist/assets/index-8cb5df77.js                   7.12 kB │ gzip:     1.58 kB
+dist/assets/index-661a375d.js                  17.11 kB │ gzip:     3.27 kB
+dist/assets/index-b5edabb6.js                  21.70 kB │ gzip:     3.97 kB
+dist/assets/index-a4ca6813.js                  34.60 kB │ gzip:     5.67 kB
+dist/assets/ProductOfferLabel-c85d902a.js      53.07 kB │ gzip:    11.10 kB
+dist/assets/index-27432a0f.js                  57.27 kB │ gzip:     9.96 kB
+dist/assets/useRecommendation-0248df9a.js     136.09 kB │ gzip:    41.80 kB
+dist/assets/AspectRatio-3ef660d3.js           568.53 kB │ gzip:   100.59 kB
+dist/assets/index-91d04ac0.js               3,701.59 kB │ gzip: 2,633.02 kB
+dist/assets/vendor-39e6e56f.js              8,798.45 kB │ gzip: 1,535.39 kB
