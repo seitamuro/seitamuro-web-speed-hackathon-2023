@@ -1,11 +1,11 @@
 import type { FormikErrors } from 'formik';
 import { useFormik } from 'formik';
-import _ from 'lodash';
 import type { FC } from 'react';
 import { memo } from 'react';
 import * as z from 'zod';
 
 import type { ReviewFragmentResponse } from '../../../graphql/fragments';
+import { isEqual } from '../../../utils/mylodash';
 import { PrimaryButton } from '../../foundation/PrimaryButton';
 import { TextArea } from '../../foundation/TextArea';
 import { ReviewList } from '../ReviewList';
@@ -71,6 +71,6 @@ export const ReviewSection: FC<Props> = memo(({ hasSignedIn, onSubmitReview, rev
       )}
     </div>
   );
-}, _.isEqual);
+}, isEqual);
 
 ReviewSection.displayName = 'ReviewSection';

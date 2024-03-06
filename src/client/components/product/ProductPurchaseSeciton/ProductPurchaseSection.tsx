@@ -1,8 +1,8 @@
-import _ from 'lodash';
 import type { FC } from 'react';
 import { memo } from 'react';
 
 import type { ProductFragmentResponse } from '../../../graphql/fragments';
+import { isEqual } from '../../../utils/mylodash';
 import { Icon } from '../../foundation/Icon';
 import { OutlineButton } from '../../foundation/OutlineButton';
 import { PrimaryAnchor } from '../../foundation/PrimaryAnchor';
@@ -66,7 +66,7 @@ export const ProductPurchaseSection: FC<Props> = memo(
       </div>
     );
   },
-  _.isEqual,
+  isEqual,
 );
 
 ProductPurchaseSection.displayName = 'ProductPurchaseSection';
