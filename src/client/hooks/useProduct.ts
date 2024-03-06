@@ -14,6 +14,7 @@ export const useProduct = (productId: number) => {
   });
 
   const product = productResult.data?.product;
+  console.log('product: ', product);
 
   return { product };
 };
