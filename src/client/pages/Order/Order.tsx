@@ -1,6 +1,5 @@
 import type { FC } from 'react';
 import { lazy } from 'react';
-import { Helmet } from 'react-helmet';
 import { useNavigate } from 'react-router-dom';
 
 import { Layout } from '../../components/application/Layout';
@@ -83,11 +82,10 @@ export const Order: FC = () => {
     );
   };
 
+  document.title = '購入手続き';
+
   return (
     <>
-      <Helmet>
-        <title>購入手続き</title>
-      </Helmet>
       <Layout>
         <WidthRestriction>{renderContents()}</WidthRestriction>
       </Layout>
