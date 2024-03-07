@@ -1,3 +1,2 @@
 #!/bin/bash
-pwd
-docker build -t webspeedhackathon2023:latest .
+docker build -t webspeedhackathon2023:latest /home/ec2-user/Dockerfile
