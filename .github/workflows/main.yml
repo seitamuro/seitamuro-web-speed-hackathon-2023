@@ -9,13 +9,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: chrislennon/action-aws-cli@v1.1
-
-      - name: Set AWS region
-        run: aws configure set region ${{ secrets.AWS_REGION }}
+      - uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/${{ secrets.AWS_IAM_ROLE_NAME  }}
+          aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Deploy to AWS CodeDeploy
         run: aws deploy create-deployment --application-name webspeedhackathon2023 --deployment-group-name webspeedhackathon2023DeployGroup --github-location repository="seitamuro/seitamuro-web-speed-hackathon-2023",commitId="${{ github.sha }}"
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
