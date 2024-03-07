@@ -1,2 +1,5 @@
 #!/bin/bash
-docker stop $(docker ps -a -q)
+containers=$(docker ps -a -q)
+if [ -n "$containers" ]; then
+  docker stop $containers
+fi
